@@ -3,6 +3,7 @@ var levelup = require('levelup')
 var xtend = require('xtend')
 
 var temp = function (db, opts) {
+  if (typeof opts === 'string') opts = {prefix: opts}
   if (!opts) opts = {}
 
   var tick = 0
@@ -11,6 +12,7 @@ var temp = function (db, opts) {
   delete opts.prefix
 
   return function (tmpOpts) {
+    if (typeof tmpOpts === 'string') tmpOpts = {prefix: tmpOpts}
     tmpOpts = xtend(opts, tmpOpts)
     tmpOpts.db = function () {
       return tempdown(db, prefix + (tmpOpts.prefix || (++tick)), separator)
