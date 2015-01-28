@@ -6,6 +6,8 @@ Create a temporary sublevel that is guaranteed to be empty.
 npm install level-temp
 ```
 
+[![build status](http://img.shields.io/travis/mafintosh/level-temp.svg?style=flat)](http://travis-ci.org/mafintosh/level-temp)
+
 ## Usage
 
 ``` js
