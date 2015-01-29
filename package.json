@@ -1,6 +1,6 @@
 {
   "name": "level-temp",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Create a temporary sublevel that is guaranteed to be empty",
   "main": "index.js",
   "dependencies": {
