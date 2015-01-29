@@ -43,7 +43,7 @@ tape('empty after restart', function (t) {
         var b = temp(db)() // same as restart
 
         b.get('hello', function (err, value) {
-          if (err) throw err
+          t.ok(err, 'get failed')
           t.notOk(value, 'hello not in there')
 
           b.createReadStream()
@@ -67,10 +67,10 @@ tape('clears on open', function (t) {
     var a = tmp('test')
 
     a.get('hello', function (err, value) {
-      if (err) throw err
+      t.ok(err, 'get failed')
       t.notOk(value, 'value was removed')
       db.get('!test!hello', function (err, value) {
-        if (err) throw err
+        t.ok(err, 'get failed')
         t.notOk(value, 'value was removed')
         t.end()
       })
