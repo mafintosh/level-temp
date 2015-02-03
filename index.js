@@ -7,8 +7,8 @@ var temp = function (db, opts) {
   if (!opts) opts = {}
 
   var tick = 0
-  var separator = opts.separator || '!'
-  var prefix = opts.prefix ? opts.prefix + separator : ''
+  var separator = opts.separator || opts.sep || '!'
+  var prefix = opts.prefix ? separator + opts.prefix + separator : ''
   delete opts.prefix
 
   return function (tmpOpts) {
