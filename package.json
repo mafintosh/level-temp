@@ -5,7 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "levelup": "^0.19.0",
-    "subleveldown": "^1.1.0",
+    "subleveldown": "^2.0.0",
     "xtend": "^4.0.0"
   },
   "devDependencies": {

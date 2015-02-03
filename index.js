@@ -15,7 +15,7 @@ var temp = function (db, opts) {
     if (typeof tmpOpts === 'string') tmpOpts = {prefix: tmpOpts}
     tmpOpts = xtend(opts, tmpOpts)
     tmpOpts.db = function () {
-      return tempdown(db, prefix + (tmpOpts.prefix || (++tick)), separator)
+      return tempdown(db, prefix + (tmpOpts.prefix || (++tick).toString(16)), separator)
     }
 
     return levelup(db.location, tmpOpts)
